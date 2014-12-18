@@ -15,15 +15,15 @@
 <body>
 
 <!--Homepage-->
-    <section data-role="page" id="home" data-theme="c">
+    <section data-role="page" id="home">
       <header data-role="header" data-position="fixed" data-theme="c">
             <h1>Jordan-Rieger Fund for Pancreatic Cancer Mobile Site</h1>
-                <div data-role="navbar" data-iconpos="left">
+                <div data-role="navbar">
     <ul>
                               <li class="ui-btn-active"><a href="#home">Home</a> </li>
                               <li><a href="#about">About</a></li>
                               <li><a href="#getinvolved">Get Involved</a></li>
-                              <li><a href="#contact">Contact</a></li>
+                              <li><a href="#contact" data-rel="popup" data-position-to="window" class="ui-btn" data-transition="pop">Contact Us</a></li>
 </ul>
                   </div>
             </header>
@@ -46,10 +46,10 @@
 </section>
 
 <!--About-->
-      <section data-role="page" id="about" data-theme="c">
+      <section data-role="page" id="about">
       <header data-role="header" data-position="fixed" data-theme="c">
             <h1>Jordan-Rieger Fund for Pancreatic Cancer Mobile Site</h1>
-                <div data-role="navbar" data-iconpos="left">
+                <div data-role="navbar">
     <ul>
                               <li><a href="#home">Home</a> </li>
                               <li class="ui-btn-active"><a href="#about">About</a></li>
@@ -76,10 +76,10 @@
 </section>
 
 <!--Get Involved-->
-      <section data-role="page" id="getinvolved" data-theme="c">
+      <section data-role="page" id="getinvolved">
       <header data-role="header" data-position="fixed" data-theme="c">
             <h1>Jordan-Rieger Fund for Pancreatic Cancer Mobile Site</h1>
-                <div data-role="navbar" data-iconpos="left">
+                <div data-role="navbar">
     <ul>
                               <li><a href="#home">Home</a> </li>
                               <li><a href="#about">About</a></li>
@@ -108,21 +108,8 @@
 </section>
 
  <!--Contact-->
-    <section data-role="page" id="contact" data-theme="c">
-      <header data-role="header" data-position="fixed" data-theme="c">
-            <h1>Jordan-Rieger Fund for Pancreatic Cancer Mobile Site</h1>
-                <div data-role="navbar" data-iconpos="left">
-    <ul>
-                              <li><a href="#home">Home</a> </li>
-                              <li><a href="#about">About</a></li>
-                              <li><a href="#getinvolved">Get Involved</a></li>
-                              <li class="ui-btn-active"><a href="#contact">Contact</a></li>
-</ul>
-                  </div>
-            </header>
-
-            <section id="main" data-role="content" class="ui-content">
-                  <form class='form-verticle'>
+      <div data-role="popup" id="contact">
+                 <form role="form">
                         <h2>Contact Us Today!</h2>
                         <div class="first-group ui-field-contain" >
                               <label for="first" >First Name</label>
@@ -168,14 +155,10 @@
                         
                         <button type="submit" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" >Submit</button>
                   </form>
-            </section>
-</section>
+</div>
 
-      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-      <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-      <script src="js/app.js"></script>
-      <script src="js/app2.js"></script>
-      <script src="js/validate.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="js/jquery.mobile-1.4.5.min.js"></script>
       <!--<script src="js/app1.js"></script>-->
 </body>
 </html>
