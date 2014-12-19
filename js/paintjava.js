@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var canvas = document.getElementById("MyCanvas");
+    var canvas = document.getElementById("myCanvas");
     var context = canvas.getContext("2d");
     var draw = false;
     var colorRed = "#e52d2d";
@@ -17,14 +17,13 @@ $(document).ready(function () {
     var paint;
     var curColor = colorPurple;
     var clickColor = new Array();
-    var curSize = "normal";
     var started = false;
 
     context.strokeStyle = '#1685ad';
 
 
     //mousedown
-    $("#MyCanvas").mousedown(function(e){
+    $("#myCanvas").mousedown(function(e){
     var mouseX = e.pageX - this.offsetLeft;
     var mouseY = e.pageY - this.offsetTop;
         
@@ -34,12 +33,12 @@ $(document).ready(function () {
     });
 
     //mouseup
-    $("#MyCanvas").mouseup(function(e){
+    $("#myCanvas").mouseup(function(e){
     paint = false;
     });
 
     //mousemouve
-    $("#MyCanvas").mousemove(function (e) {
+    $("#myCanvas").mousemove(function (e) {
          if(paint) {
             addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
             redraw();
@@ -47,7 +46,7 @@ $(document).ready(function () {
     });
 
     //mouseleave
-    $('#MyCanvas').mouseleave(function(e) {
+    $('#myCanvas').mouseleave(function(e) {
     paint = false;
     });
 
@@ -81,18 +80,6 @@ $(document).ready(function () {
         clickColor = new Array();
         clearCanvas();
     });
-    $('#cat').get(0).addEventListener('click', function(e) { 
-                onStamp(e.target.id); 
-            }, 
-                false);
-    $('#bug').get(0).addEventListener('click', function(e) { 
-                onStamp(e.target.id); 
-            }, 
-                false);
-    $('#dog').get(0).addEventListener('click', function(e) { 
-                onStamp(e.target.id); 
-            }, 
-                false);
 
     //add click
     function addClick(x, y, dragging)
@@ -101,14 +88,13 @@ $(document).ready(function () {
     clickY.push(y);
     clickDrag.push(dragging);
     clickColor.push(curColor);
-    clickSize.push(curSize);
     }
 
     //clear canvas
     function clearCanvas() {
-       context.fillStyle = '#ffffff'; // Work around for Chrome
-    context.fillRect(0, 0, 900, 500); // Fill in the canvas with white
-    canvas.width = canvas.width; // clears the canvas 
+        context.fillStyle = '#ffffff'; // Work around for Chrome
+        context.fillRect(0, 0, 900, 500); // Fill in the canvas with white
+        canvas.width = canvas.width; // clears the canvas 
     }
 
 
@@ -132,7 +118,7 @@ $(document).ready(function () {
             context.closePath();
             context.strokeStyle = clickColor[i];
             context.stroke();
-    }
+        }
     }
 
 });

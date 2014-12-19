@@ -1,4 +1,9 @@
 /* Main Content */
+
+/* font-family: 'Lato', sans-serif;
+*font-family: 'Old Standard TT', serif;
+*/
+
 body {
     padding-bottom: 40px;
     color: #5a5a5a;
@@ -8,6 +13,16 @@ body {
 }
 .clearfix {
     display: block;
+}
+h1 {
+    font-family: 'Old Standard TT', serif;
+    size: 34px;
+}
+
+p {
+    font-family: "Lato", sans-serif;
+        text-align: justify;
+    text-justify: inter-word;
 }
 div {
     display: block;
@@ -247,6 +262,8 @@ body {
     margin:0;
     padding:0;
     background:url("bg.jpg") repeat;
+    font-family: 'Lato', sans-serif;
+    font-style; thin;
 }
  
 .jp-video {
@@ -289,4 +306,6 @@ body {
     left: 0;
     z-index:1000;
 }
-    
+
+
+
