@@ -19,16 +19,12 @@
         <ul class="nav navbar-nav">
           <li><a href="/DGMD20-Assignment-2/index.html">Home</a>
         </li>
-        <li><a href="/DGMD20-Assignment-2/about.html">About</a>
+        <li class="active"><a href="/DGMD20-Assignment-3/canvas.html">Kids Corner</a>
       </li>
-      <li><a href="/DGMD20-Assignment-2/get_involved.html">Get Involved</a>
+      <li><a href="/DGMD20-Assignment-3/videos.html">Media</a>
     </li>
-    <li class="active"><a href="/DGMD20-Assignment-2/share_story.html">Share Your Story</a>
+    <li><a href="/DGMD20-Assignment-3/index.mobile.html">Mobile Site</a>
   </li>
-  <li><a href="/DGMD20-Assignment-2/gallery.html">Gallery</a>
-</li>
-<li><a href="/DGMD20-Assignment-2/contact.html">Contact</a>
-</li>
 </ul>
 </div>
 </nav>
@@ -37,7 +33,7 @@
 <div id="myCarousel" class="carousel slide">
 <div class="carousel-inner">
 <div class="item active">
-<img src="images/banner4share.jpg" alt="JR Fund Banner" class="img-responsive">
+  <img src="images/bannerCanvas.jpg" alt="JR Fund Banner" class="img-responsive">
 </div>
 </div>
 </div>
@@ -46,39 +42,48 @@
 <div class="container">
 <div class="row">
 <div class="box">
-<div class="row text-center"><hr>
-<p class="lead">Show your support and draw a picture relating to the fight against Pancreatic cancer! </p>
-<hr>
-</div>
-
- <ul>
+  <div class="row text-center"><hr>
+    <p class="lead">Show your support and draw a picture relating to the fight against Pancreatic cancer! </p>
+    <hr>
+  </div>
+  <ul>
     <li>Choose a color:
-        <button id="chooseRed" type="button">Red</button>
-        <button id="chooseOrange" type="button">Orange</button>
-        <button id="chooseYellow" type="button">Yellow</button>
-        <button id="chooseGreen" type="button">Green</button>
-        <button id="chooseBlue" type="button">Blue</button>
-        <button id="choosePurple" type="button">Purple</button>
-        <button id="chooseBrown" type="button">Brown</button>
+      <button id="chooseRed" type="button">Red</button>
+      <button id="chooseOrange" type="button">Orange</button>
+      <button id="chooseYellow" type="button">Yellow</button>
+      <button id="chooseGreen" type="button">Green</button>
+      <button id="chooseBlue" type="button">Blue</button>
+      <button id="choosePurple" type="button">Purple</button>
+      <button id="chooseBrown" type="button">Brown</button>
     </li>
-</ul>
-<canvas id="MyCanvas" style="border:1px dashed;" height="500" width="900"></canvas>
-<br>
-<button id="clearCanvas" type="button" onclick="clearCanvas()">Clear</button>
-<button id"submit" type="button" onclick="location.href='/thankyou.html'">Send Us Your Art</button>
-
+  </ul>
+  <br>
+  <br>
+  <ul>
+    <li>Add a sticker:
+      <img id="cat" width="50" height="50" src="images/cat.png">
+      <img id="dog" width="50" height="50" src="images/dog.png">
+      <img id="bug" width="50" height="50" src="images/bug.png">
+      <img id="ribbon" width="50" height="50" src="images/ribbon.png">
+      <br>
+    </li>
+  </ul>
+  <br>
+  <br>
+  <canvas id="myCanvas" height="500" width="900"  style="border: 1px dashed;"> </canvas>
+  <br>
+  <br>
+  <button id="clearCanvas" type="button" onclick="clearCanvas()">Clear</button>
+  <button id"submit" type="button" onclick="location.href='/thankyou.html'">Send Us Your Art</button>
 </div>
 </div>
 </div>
-
-
 <!-- JQuery, Bootstrap-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
- <script src="js/jquery-1.4.1.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
 <script src="js/jcanvas.min.js"></script>
 <script src="js/paintjava.js"></script>
-
+<script src="js/drag.js"></script>
 <!-- JQuery, Bootstrap-->
-
 </body>
 </html>

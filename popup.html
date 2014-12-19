@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Mobile $.dynamic_popup() Tests</title>
+
+    <link rel="stylesheet"  href="jqm/jquery.mobile-1.4.2.min.css" />
+    <script src="jqm/jquery.min.js"></script>
+    <script src="jqm/jquery.mobile-1.4.2.min.js"></script>
+    <!-- include the jQM dynamic popup plugin -->
+    <script src="../jquery.mobile.dynamic.popup.js"></script>
+
+    <script type="text/javascript">
+        $(document).delegate( '#demoPage', 'pageinit', function() {
+            $('#Register').on('click', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                // Demo #1
+                if($('#name').val()!='' && $('#email').val()!=''){
+                    $.dynamic_popup({
+                        content: '<p>' + $('#name').val() + ', you\'ve been successfully registered!' + '</p>',
+                        'data-transition': 'slideup',
+                        'data-position-to': '#Register'
+                    })
+                    .bind({
+                        popupafteropen: function(e){
+                            console.log('Opened the popup!');
+                        },
+                        popupafterclose: function(e){
+                            $.mobile.changePage('#thankyouPage');
+                        }
+                    });
+                } else {
+                    $.dynamic_popup('Enter your <b>name</b> and <b>email</b> before submitting the form.')
+                    .bind({
+                        popupafteropen: function(e){
+                            console.log('Opened the popup!');
+                        },
+                        popupafterclose: function(e){
+                            console.log('Closing the popup!');
+                        }
+                    });
+                }
+            });
+            $('#PressMe').on('click', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                $.dynamic_popup('This is a basic help message. Did you get it?');
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        .demoBox { margin-bottom:20px; padding-bottom:20px; border-bottom:1px dotted #cccccc; }
+        .demoBox.last { border-bottom:none; }
+    </style>
+
+</head>
+<body>
+
+<div id="demoPage" data-role="page">
+
+    <div data-role="header">
+        <a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slide">Home</a>
+        <h3>Dynamic popup</h3>
+    </div>
+
+    <div data-role="content">
+
+        <div class="demoBox">
+            <h3>First example</h3>
+            <p>Programatically called simple popup alert: <a href="#" id="PressMe">see example</a>.</p>
+        </div>
+
+
+        <div class="demoBox">
+            <h3>Second demo</h3>
+            <p>Press the button to receive an error popup, then fill the <code>name</code> field and press the <code>Register</code> button to receive a success popup.</p>
+
+            <form>
+
+                <div data-role="fieldcontain">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" value="" placeholder="Your name" autocapitalize="on" pattern="[a-zA-Z\- ]+" />
+                </div>
+
+                <div data-role="fieldcontain">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" value="" placeholder="your@email.com" />
+                </div>
+
+                <button data-role="button" id="Register" data-inline="true" data-icon="arrow-r" data-iconpos="right" data-theme="b">Register</button>
+
+
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="thankyouPage" data-role="page">
+
+    <div data-role="header">
+        <a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slide" data-rel="back">Home</a>
+        <h3>Dynamic popup</h3>
+    </div>
+
+    <div data-role="content">
+        <h1>Thank you message</h1>
+        <p>This is the thank you message.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

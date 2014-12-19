@@ -1,8 +1,7 @@
  $(document).ready(function() {
 
-     $('#submit-btn').click(function(submit) {
-         var name = $('#name').val();
-         if (!name.trim()) {
+    $('button').click(function(submit) {
+         if ($('#name').val().length == 0) {
              alert('Please return to form and enter a name.');
              return submit.preventDefault();
          } else {
@@ -16,3 +15,5 @@
      }); //end reset click
 
  }); //end .ready(function()
+
+
